@@ -1,0 +1,58 @@
+[user]
+    name = Tiangang Song
+    email = git@bitsea.link
+    signingkey = C89476AEF7294CC1
+[commit]
+    gpgsign = true
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+    autocrlf = input
+[init]
+    defaultBranch = master
+[status]
+    submoduleSummary = true
+[fetch]
+    prune = true
+[pull]
+    rebase = false
+[alias]
+    alias = config --get-regexp alias
+    st = status
+    co = checkout
+    wt = worktree
+    br = branch
+    br-curr = rev-parse --abbrev-ref HEAD
+    cm = commit
+    amend = commit --amend
+    sign = commit --amend --no-edit -S
+    unstage = reset --
+    lg = log -n9 --graph --date=short --pretty=format:'%C(yellow)%h %C(magenta)(%cd) %C(blue)<%an> %C(auto)%d%n%s'
+    last = show --quiet --format=fuller --show-signature
+    ssum = show --compact-summary
+    dsum = diff --compact-summary
+    drmt = diff @{u}
+    drs = diff --compact-summary @{u}
+    dt = difftool -y
+    mb = merge-base
+    mt = mergetool
+    pick = cherry-pick
+    rb = rebase
+    rst = reset
+    rsh = reset --hard
+    cln = clean -di
+    cln-all = clean -xdi
+    ft = fetch
+    fa = fetch --all
+    track = branch -u
+    untrack = branch --unset-upstream
+    rev = rev-parse --short
+    cat = cat-file -p
+    sub = submodule
+    subi = submodule update --init
+
+    pu = "!f() { git push -u $1 HEAD; }; f"
+    pd = "!f() { git push -d $1 $2; }; f"
+    br-dangle = "!f() { git branch -vv | grep 'origin/.*: gone' | awk '{print $1}'; }; f"
+    br-clean = "!f() { git br-dangle | xargs git br -D; }; f"
+    ancestor = "!f() { git merge-base --is-ancestor $1 $2 && echo "true" || echo "false"; }; f"
