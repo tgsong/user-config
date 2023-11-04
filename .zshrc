@@ -138,11 +138,14 @@ export EDITOR=nvim
 export MAKEFLAGS='-j16'
 export GPG_TTY=$(tty) # fix gpg passphrase prompt
 
+# proxy
 # export HOSTIP=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
-# export http_proxy="http://$HOSTIP:7890"
-# export https_proxy="http://$HOSTIP:7890"
-# export all_proxy="socks5://$HOSTIP:7890"
-# export ALL_PROXY="socks5://$HOSTIP:7890"
+# export http_proxy="http://$HOSTIP:10809"
+# export https_proxy="http://$HOSTIP:10809"
+# export all_proxy="socks5://$HOSTIP:10808"
+# export ALL_PROXY="socks5://$HOSTIP:10808"
+# export ssh_proxy="ProxyCommand=nc -X connect -x $HOSTIP:10809 %h %p"
+# git config --global core.sshCommand "ssh -o '$ssh_proxy'"
 
 # alias
 alias la="ls -la"

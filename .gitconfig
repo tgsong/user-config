@@ -3,7 +3,7 @@
     email = git@bitsea.link
     signingkey = C89476AEF7294CC1
 [commit]
-    gpgsign = true
+    gpgsign = false
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
