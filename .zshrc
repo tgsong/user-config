@@ -137,6 +137,8 @@ source $HOME/.keychain/$HOST-sh
 export EDITOR=nvim
 export MAKEFLAGS='-j16'
 export GPG_TTY=$(tty) # fix gpg passphrase prompt
+export LD_LIBRARY_PATH=$HOME/.local/lib
+export PKG_CONFIG_PATH=$HOME/.local/lib/pkgconfig
 
 # proxy
 # export HOSTIP=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
@@ -148,6 +150,7 @@ export GPG_TTY=$(tty) # fix gpg passphrase prompt
 # git config --global core.sshCommand "ssh -o '$ssh_proxy'"
 
 # alias
-alias la="ls -la"
+alias ...='cd ..; cd ..'
+alias la='ls -lha'
 alias v=nvim
 alias docker=podman

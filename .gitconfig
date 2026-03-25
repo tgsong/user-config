@@ -1,6 +1,6 @@
 [user]
     name = Tiangang Song
-    email = git@bitsea.link
+    email = git.t@whumail.com
     signingkey = C89476AEF7294CC1
 [commit]
     gpgsign = false
@@ -8,6 +8,8 @@
     editor = nvim
     excludesfile = ~/.gitignore
     autocrlf = input
+[credential]
+    helper = manager
 [init]
     defaultBranch = master
 [status]
@@ -28,7 +30,7 @@
     sign = commit --amend --no-edit -S
     unstage = reset --
     lg = log -n9 --graph --date=short --pretty=format:'%C(yellow)%h %C(magenta)(%cd) %C(blue)<%an> %C(auto)%d%n%s'
-    last = show --quiet --format=fuller --show-signature
+    last = log -n1 --show-signature
     ssum = show --compact-summary
     dsum = diff --compact-summary
     drmt = diff @{u}
